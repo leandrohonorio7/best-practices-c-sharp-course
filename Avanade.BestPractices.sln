@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{EB69F290-76CD-44C1-933F-616626B20BFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{BDB98BE6-8D5A-49D0-85EB-9DDA54F29E1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service", "{0614CE6E-7F52-424E-89F5-05083E272FFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{D41A7DD0-B2D7-45DB-AAA6-45D8BBEA932A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{9EB2FE38-7742-4252-84A8-C1320B40F813}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.BestPractices.API", "src\Avanade.BestPractices.API\Avanade.BestPractices.API.csproj", "{A3BA19D6-BE26-4A1A-9084-9BB7E3F908C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.BestPractices.Domain", "src\Avanade.BestPractices.Domain\Avanade.BestPractices.Domain.csproj", "{C69B1B59-4944-466F-B610-5F768A88E738}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.BestPractices.Service", "src\Avanade.BestPractices.Service\Avanade.BestPractices.Service.csproj", "{452FEFFE-FB47-458B-8824-DD07217950F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{57A9B28D-E066-46D7-B7C2-8E10066554FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{5BBD7A52-1315-4171-A0F0-152DBD1537C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.BestPractices.Infrasctructure.CrossCutting", "src\Avanade.BestPractices.Infrasctructure.CrossCutting\Avanade.BestPractices.Infrasctructure.CrossCutting.csproj", "{9FCCAF74-A55F-42DF-99F4-A014380004DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.BestPractices.Infrestructure.Core", "src\Avanade.BestPractices.Infrestructure.Core\Avanade.BestPractices.Infrestructure.Core.csproj", "{EFB2A4A1-9F1E-49E5-86E7-970172B5B787}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.BestPractices.Tests", "test\Avanade.BestPractices.Tests\Avanade.BestPractices.Tests.csproj", "{E6464A51-8B48-4A19-84B9-8EE612AB3A77}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.BestPractices.Infrestructure.Data", "src\Avanade.BestPractices.Infrestructure.Data\Avanade.BestPractices.Infrestructure.Data.csproj", "{3EEE2228-45E2-4451-98A3-027C8ED65550}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3BA19D6-BE26-4A1A-9084-9BB7E3F908C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3BA19D6-BE26-4A1A-9084-9BB7E3F908C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3BA19D6-BE26-4A1A-9084-9BB7E3F908C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3BA19D6-BE26-4A1A-9084-9BB7E3F908C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C69B1B59-4944-466F-B610-5F768A88E738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C69B1B59-4944-466F-B610-5F768A88E738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C69B1B59-4944-466F-B610-5F768A88E738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C69B1B59-4944-466F-B610-5F768A88E738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{452FEFFE-FB47-458B-8824-DD07217950F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452FEFFE-FB47-458B-8824-DD07217950F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452FEFFE-FB47-458B-8824-DD07217950F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452FEFFE-FB47-458B-8824-DD07217950F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FCCAF74-A55F-42DF-99F4-A014380004DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FCCAF74-A55F-42DF-99F4-A014380004DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FCCAF74-A55F-42DF-99F4-A014380004DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FCCAF74-A55F-42DF-99F4-A014380004DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB2A4A1-9F1E-49E5-86E7-970172B5B787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB2A4A1-9F1E-49E5-86E7-970172B5B787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB2A4A1-9F1E-49E5-86E7-970172B5B787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB2A4A1-9F1E-49E5-86E7-970172B5B787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6464A51-8B48-4A19-84B9-8EE612AB3A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6464A51-8B48-4A19-84B9-8EE612AB3A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6464A51-8B48-4A19-84B9-8EE612AB3A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6464A51-8B48-4A19-84B9-8EE612AB3A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EEE2228-45E2-4451-98A3-027C8ED65550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EEE2228-45E2-4451-98A3-027C8ED65550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EEE2228-45E2-4451-98A3-027C8ED65550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EEE2228-45E2-4451-98A3-027C8ED65550}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3BA19D6-BE26-4A1A-9084-9BB7E3F908C5} = {EB69F290-76CD-44C1-933F-616626B20BFE}
+		{C69B1B59-4944-466F-B610-5F768A88E738} = {BDB98BE6-8D5A-49D0-85EB-9DDA54F29E1F}
+		{452FEFFE-FB47-458B-8824-DD07217950F2} = {0614CE6E-7F52-424E-89F5-05083E272FFC}
+		{57A9B28D-E066-46D7-B7C2-8E10066554FA} = {D41A7DD0-B2D7-45DB-AAA6-45D8BBEA932A}
+		{5BBD7A52-1315-4171-A0F0-152DBD1537C4} = {D41A7DD0-B2D7-45DB-AAA6-45D8BBEA932A}
+		{9FCCAF74-A55F-42DF-99F4-A014380004DA} = {5BBD7A52-1315-4171-A0F0-152DBD1537C4}
+		{EFB2A4A1-9F1E-49E5-86E7-970172B5B787} = {D41A7DD0-B2D7-45DB-AAA6-45D8BBEA932A}
+		{E6464A51-8B48-4A19-84B9-8EE612AB3A77} = {9EB2FE38-7742-4252-84A8-C1320B40F813}
+		{3EEE2228-45E2-4451-98A3-027C8ED65550} = {57A9B28D-E066-46D7-B7C2-8E10066554FA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BC978A5-A591-4DF4-A987-A7DD11D72557}
+	EndGlobalSection
+EndGlobal
