@@ -1,5 +1,6 @@
 ﻿using Avanade.BestPractices.Infrestructure.Core.Entities;
 using System;
+using System.Collections.Generic;
 
 namespace Avanade.BestPractices.Domain.Entities
 {
@@ -7,6 +8,9 @@ namespace Avanade.BestPractices.Domain.Entities
     {
         public string Name { get; set; }
         public DateTime DateOfBirthday { get; set; }
-        public int DriverLicense { get; set; }
+        public bool IsApproved { get; set; }
+
+        public List<Document> Documents { get; set; }
+        public List<Ride> Rides { get; set; }
     }
 }

@@ -19,6 +19,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="Repositories\" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <ProjectReference Include="..\Avanade.BestPractices.Domain\Avanade.BestPractices.Domain.csproj" />
 	</ItemGroup>
 
