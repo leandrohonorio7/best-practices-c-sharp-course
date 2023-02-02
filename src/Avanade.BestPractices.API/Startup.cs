@@ -1,4 +1,5 @@
 using Avanade.BestPractices.Infrasctructure.CrossCutting.InversionOfControl;
+using Avanade.BestPractices.Infrasctructure.CrossCutting.Middlewares.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,8 @@ namespace Avanade.BestPractices.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddEntityDependency(Configuration);
+            services.AddRepositoryDependencies();
             services.AddServiceDependecies();
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -43,6 +46,7 @@ namespace Avanade.BestPractices.API
             app.UseRouting();
 
             app.UseAuthorization();
+            app.IdentityUserLogged();
 
             app.UseEndpoints(endpoints =>
             {

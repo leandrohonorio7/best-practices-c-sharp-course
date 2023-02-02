@@ -1,13 +1,16 @@
 ﻿using Avanade.BestPractices.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using Avanade.BestPractices.Infrestructure.Data.Configurations.Core;
 
 namespace Avanade.BestPractices.Infrestructure.Data.Configurations
 {
-    public class DocumentConfiguration : IEntityTypeConfiguration<Document>
+    public class DocumentConfiguration : EntityTypeBaseConfiguration<Document>
     {
-        public void Configure(EntityTypeBuilder<Document> builder)
+        public override void Configure(EntityTypeBuilder<Document> builder)
         {
+            base.Configure(builder);
+
             builder.ToTable("Documents");
         }
     }

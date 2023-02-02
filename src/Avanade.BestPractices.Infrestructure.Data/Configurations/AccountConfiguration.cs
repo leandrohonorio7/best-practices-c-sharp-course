@@ -1,13 +1,19 @@
 ﻿using Avanade.BestPractices.Domain.Entities;
+using Avanade.BestPractices.Infrestructure.Data.Configurations.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Avanade.BestPractices.Infrestructure.Data.Configurations
 {
-    public class AccountConfiguration : IEntityTypeConfiguration<Account>
+    public class AccountConfiguration : EntityTypeBaseConfiguration<Account>
     {
-        public void Configure(EntityTypeBuilder<Account> builder)
+        public override void Configure(EntityTypeBuilder<Account> builder)
         {
+            base.Configure(builder);
+
+            builder.Property(x => x.Name)
+                .HasMaxLength(255);
+
             builder.ToTable("Accounts");
         }
     }
