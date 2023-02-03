@@ -1,3 +1,5 @@
+using AutoMapper;
+using Avanade.BestPractices.API.Infrasctructure.AutoMapper.Profiles;
 using Avanade.BestPractices.Infrasctructure.CrossCutting.InversionOfControl;
 using Avanade.BestPractices.Infrasctructure.CrossCutting.Middlewares.Authentication;
 using Microsoft.AspNetCore.Builder;
@@ -21,7 +23,15 @@ namespace Avanade.BestPractices.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var mapperConfig = new MapperConfiguration(x =>
+            {
+                x.AddProfile<AccountProfile>();
+            });
+            var mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
             services.AddEntityDependency(Configuration);
+            services.AddIdentityUserLogged();
             services.AddRepositoryDependencies();
             services.AddServiceDependecies();
             services.AddControllers();

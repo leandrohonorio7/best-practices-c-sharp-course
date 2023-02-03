@@ -35,5 +35,10 @@ namespace Avanade.BestPractices.Infrestructure.Core.Entities.Interfaces
         #region Queryable
         IQueryable<T> Query();
         #endregion
+
+        #region SaveChanges
+        Task<int> SaveChangesAsync();
+        int SaveChanges();
+        #endregion
     }
 }

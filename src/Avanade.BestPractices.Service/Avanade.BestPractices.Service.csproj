@@ -1,11 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Avanade.BestPractices.Infrestructure.Core\Avanade.BestPractices.Infrestructure.Core.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="9.4.0" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\Avanade.BestPractices.Domain\Avanade.BestPractices.Domain.csproj" />
+		<ProjectReference Include="..\Avanade.BestPractices.Infrestructure.Core\Avanade.BestPractices.Infrestructure.Core.csproj" />
+	</ItemGroup>
 
 </Project>

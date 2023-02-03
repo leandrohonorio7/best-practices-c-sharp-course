@@ -8,7 +8,6 @@ namespace Avanade.BestPractices.Domain.Entities
         public string Name { get; set; }
         public string Phone { get; set; }
 
-
         public List<Model> Models { get; set; }
     }
 }

@@ -12,6 +12,9 @@ namespace Avanade.BestPractices.Infrestructure.Data.Configurations
             base.Configure(builder);
 
             builder.ToTable("Documents");
+
+            builder.Property(x => x.Number)
+                .HasMaxLength(30);
         }
     }
 }

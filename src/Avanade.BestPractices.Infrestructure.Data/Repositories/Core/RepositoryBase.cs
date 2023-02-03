@@ -80,5 +80,15 @@ namespace Avanade.BestPractices.Infrestructure.Data.Repositories.Core
             _db.Set<T>()
                 .UpdateRange(entities);
         }
+
+        public Task<int> SaveChangesAsync()
+        {
+            return _db.SaveChangesAsync();
+        }
+
+        public int SaveChanges()
+        {
+            return _db.SaveChanges();
+        }
     }
 }

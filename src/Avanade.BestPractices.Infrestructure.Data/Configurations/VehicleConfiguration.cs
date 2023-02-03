@@ -12,6 +12,12 @@ namespace Avanade.BestPractices.Infrestructure.Data.Configurations
             base.Configure(builder);
 
             builder.ToTable("Vehicles");
+
+            builder.Property(x => x.Plate)
+                .HasMaxLength(15);
+
+            builder.Property(x => x.Plate)
+                .HasMaxLength(50);
         }
     }
 }

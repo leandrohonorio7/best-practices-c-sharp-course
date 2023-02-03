@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
+using Avanade.BestPractices.Infrestructure.Core.Entities.Constants;
 
 namespace Avanade.BestPractices.Infrestructure.Data.Contexts
 {
@@ -31,15 +32,34 @@ namespace Avanade.BestPractices.Infrestructure.Data.Contexts
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Charge> Charges { get; set; }
         public DbSet<Document> Documents { get; set; }
+        public DbSet<DocumentParameter> DocumentParameters { get; set; }
+        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Model> Models { get; set; }
+        public DbSet<ModelVersion> ModelVersions { get; set; }
+        public DbSet<Ride> Rides { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            ConfigureMaxStringLength(modelBuilder);
+
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(EntityContext).Assembly);
 
             modelBuilder.HasDefaultSchema("domain");
         }
+
+        private static void ConfigureMaxStringLength(ModelBuilder modelBuilder)
+        {
+            var stringProperties = modelBuilder.Model
+                .GetEntityTypes()
+                .SelectMany(x => x.GetProperties()
+                    .Where(p => p.ClrType == typeof(string)));
+            foreach (var property in stringProperties)
+                property.SetMaxLength(EntityConfigutarationValueConstant.StringMaxLength);
+        }
+
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

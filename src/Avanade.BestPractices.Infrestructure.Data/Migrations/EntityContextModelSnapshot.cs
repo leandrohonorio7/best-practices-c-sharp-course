@@ -30,9 +30,10 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
-                    b.Property<DateTime>("DateOfBirthday")
+                    b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsApproved")
@@ -45,10 +46,12 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -65,10 +68,12 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -77,7 +82,8 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<Guid>("RideId")
                         .HasColumnType("uniqueidentifier");
@@ -105,7 +111,8 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -114,10 +121,12 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Number")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -139,7 +148,8 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<Guid>("DocumentId")
                         .HasColumnType("uniqueidentifier");
@@ -148,16 +158,19 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Key")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
 
@@ -176,7 +189,8 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -185,17 +199,20 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Manufactures");
+                    b.ToTable("Manufacturers");
                 });
 
             modelBuilder.Entity("Avanade.BestPractices.Domain.Entities.Model", b =>
@@ -208,7 +225,8 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -220,10 +238,12 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -242,7 +262,8 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -254,10 +275,12 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -279,7 +302,8 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("Distance")
                         .HasColumnType("int");
@@ -294,7 +318,8 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<DateTime>("StartAt")
                         .HasColumnType("datetime2");
@@ -318,13 +343,15 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Color")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("bit");
@@ -339,10 +366,12 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Plate")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
@@ -359,7 +388,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                     b.HasOne("Avanade.BestPractices.Domain.Entities.Ride", "Ride")
                         .WithMany("Charges")
                         .HasForeignKey("RideId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.OwnsOne("Avanade.BestPractices.Domain.ValueObjects.Money", "DiscountValue", b1 =>
@@ -385,7 +414,8 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                                 .HasColumnType("uniqueidentifier");
 
                             b1.Property<string>("Currency")
-                                .HasColumnType("nvarchar(max)")
+                                .HasMaxLength(255)
+                                .HasColumnType("nvarchar(255)")
                                 .HasColumnName("Currency");
 
                             b1.Property<long>("Value")
@@ -431,7 +461,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                     b.HasOne("Avanade.BestPractices.Domain.Entities.Account", "Account")
                         .WithMany("Documents")
                         .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Account");
@@ -442,7 +472,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                     b.HasOne("Avanade.BestPractices.Domain.Entities.Document", "Document")
                         .WithMany("DocumentParameters")
                         .HasForeignKey("DocumentId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Document");
@@ -453,7 +483,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                     b.HasOne("Avanade.BestPractices.Domain.Entities.Manufacturer", "Manufacturer")
                         .WithMany("Models")
                         .HasForeignKey("ManufacturerId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Manufacturer");
@@ -464,7 +494,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                     b.HasOne("Avanade.BestPractices.Domain.Entities.Model", "Model")
                         .WithMany("ModelVersions")
                         .HasForeignKey("ModelId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Model");
@@ -475,13 +505,13 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                     b.HasOne("Avanade.BestPractices.Domain.Entities.Account", "Account")
                         .WithMany("Rides")
                         .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Avanade.BestPractices.Domain.Entities.Vehicle", "Vehicle")
                         .WithMany("Rides")
                         .HasForeignKey("VehicleId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Account");
@@ -494,7 +524,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Migrations
                     b.HasOne("Avanade.BestPractices.Domain.Entities.ModelVersion", "ModelVersion")
                         .WithMany("Vehicles")
                         .HasForeignKey("ModelVersionId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ModelVersion");

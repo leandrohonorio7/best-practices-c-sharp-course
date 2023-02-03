@@ -1,14 +1,14 @@
 ﻿using Avanade.BestPractices.Infrestructure.Core.Entities.Interfaces;
-using Avanade.BestPractices.Service.Core;
+using Avanade.BestPractices.Infrestructure.Data.Repositories.Core;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Avanade.BestPractices.Infrasctructure.CrossCutting.InversionOfControl
 {
-    public static class ServiceDependency
+    public static class RepositoryDependency
     {
-        public static void AddServiceDependecies(this IServiceCollection services)
+        public static void AddRepositoryDependencies(this IServiceCollection services)
         {
-            services.AddScoped(typeof(IService<>), typeof(ServiceBase<>));
+            services.AddScoped(typeof(IRepository<>), typeof(RepositoryBase<>));
         }
     }
 }

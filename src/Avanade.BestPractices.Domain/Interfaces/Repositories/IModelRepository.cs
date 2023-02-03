@@ -3,7 +3,7 @@ using Avanade.BestPractices.Infrestructure.Core.Entities.Interfaces;
 
 namespace Avanade.BestPractices.Domain.Interfaces.Repositories
 {
-    public interface IModelRepository : IRepository<Manufacturer>
+    public interface IModelRepository : IRepository<Model>
     {
     }
 }

@@ -11,9 +11,6 @@ namespace Avanade.BestPractices.Infrestructure.Data.Configurations
         {
             base.Configure(builder);
 
-            builder.Property(x => x.Name)
-                .HasMaxLength(255);
-
             builder.ToTable("Accounts");
         }
     }

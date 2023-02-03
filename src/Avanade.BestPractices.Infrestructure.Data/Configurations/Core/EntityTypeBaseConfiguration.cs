@@ -1,4 +1,5 @@
 ﻿using Avanade.BestPractices.Infrestructure.Core.Entities;
+using Avanade.BestPractices.Infrestructure.Core.Entities.Constants;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,10 +12,10 @@ namespace Avanade.BestPractices.Infrestructure.Data.Configurations.Core
             builder.HasQueryFilter(x => !x.IsDeleted);
 
             builder.Property(x => x.CreatedBy)
-                .HasMaxLength(255);
+                .HasMaxLength(EntityConfigutarationValueConstant.StringMaxLength);
 
             builder.Property(x => x.ModifiedBy)
-                .HasMaxLength(255);
+                .HasMaxLength(EntityConfigutarationValueConstant.StringMaxLength);
         }
     }
 }
