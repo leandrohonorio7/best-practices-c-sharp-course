@@ -38,7 +38,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Configurations
                 netValue.Ignore(x => x.Currency);
             });
 
-            builder.Property(x => x.CreatedBy)
+            builder.Property(x => x.Description)
                 .HasMaxLength(500);
         }
     }

@@ -3,6 +3,7 @@ using Avanade.BestPractices.API.Models.Account;
 using Avanade.BestPractices.Domain.Entities;
 using Avanade.BestPractices.Domain.Entities.Enums;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Avanade.BestPractices.API.Infrasctructure.AutoMapper.Profiles
 {
@@ -11,10 +12,13 @@ namespace Avanade.BestPractices.API.Infrasctructure.AutoMapper.Profiles
         public AccountProfile()
         {
             CreateMap<AccountModel, Account>()
-                .ForMember(dest => dest.Documents, opt => opt.MapFrom(src => SetDriveLicense(src.DriverLicense)));
+                .ForMember(dest => dest.Documents, opt => opt.MapFrom(src => SetDriverLicense(src.DriverLicense)));
+
+            CreateMap<Account, AccountModel>()
+                .ForMember(dest => dest.DriverLicense, opt => opt.MapFrom(src => GetDriverLicense(src.Documents)));
         }
 
-        private List<Document> SetDriveLicense(string driverLicense)
+        private List<Document> SetDriverLicense(string driverLicense)
         {
             return new List<Document>
             {
@@ -24,6 +28,11 @@ namespace Avanade.BestPractices.API.Infrasctructure.AutoMapper.Profiles
                     Type = DocumentType.DriverLicense
                 }
             };
+        }
+
+        private string GetDriverLicense(List<Document> documents)
+        {
+            return documents?.FirstOrDefault(x => x.Type == DocumentType.DriverLicense)?.Number;
         }
     }
 }

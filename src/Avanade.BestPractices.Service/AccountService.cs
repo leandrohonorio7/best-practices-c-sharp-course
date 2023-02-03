@@ -4,6 +4,7 @@ using Avanade.BestPractices.Domain.Interfaces.Services;
 using Avanade.BestPractices.Service.Core;
 using Avanade.BestPractices.Service.Validators;
 using FluentValidation;
+using System;
 using System.Threading.Tasks;
 
 namespace Avanade.BestPractices.Service
@@ -24,6 +25,11 @@ namespace Avanade.BestPractices.Service
 
             await _accountRepository.AddAsync(account);
             await _accountRepository.SaveChangesAsync();
+        }
+
+        public Task<Account> GetByIdAsync(Guid id)
+        {
+            return _accountRepository.GetByIdAsync(id);
         }
     }
 }

@@ -56,6 +56,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Contexts
                 .GetEntityTypes()
                 .SelectMany(x => x.GetProperties()
                     .Where(p => p.ClrType == typeof(string)));
+
             foreach (var property in stringProperties)
                 property.SetMaxLength(EntityConfigutarationValueConstant.StringMaxLength);
         }

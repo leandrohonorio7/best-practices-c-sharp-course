@@ -8,7 +8,6 @@
 		<PackageReference Include="FluentValidation" Version="9.4.0" />
 	</ItemGroup>
 
-
 	<ItemGroup>
 		<ProjectReference Include="..\Avanade.BestPractices.Domain\Avanade.BestPractices.Domain.csproj" />
 		<ProjectReference Include="..\Avanade.BestPractices.Infrestructure.Core\Avanade.BestPractices.Infrestructure.Core.csproj" />

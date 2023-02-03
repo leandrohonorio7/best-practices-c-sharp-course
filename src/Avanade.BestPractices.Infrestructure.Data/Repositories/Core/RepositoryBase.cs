@@ -12,7 +12,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Repositories.Core
 {
     public class RepositoryBase<T> : IRepository<T> where T : EntityBase
     {
-        private readonly EntityContext _db;
+        protected readonly EntityContext _db;
 
         public RepositoryBase(EntityContext db)
         {

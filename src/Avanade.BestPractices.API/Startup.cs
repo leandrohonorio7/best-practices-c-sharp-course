@@ -33,7 +33,7 @@ namespace Avanade.BestPractices.API
             services.AddEntityDependency(Configuration);
             services.AddIdentityUserLogged();
             services.AddRepositoryDependencies();
-            services.AddServiceDependecies();
+            services.AddServiceDependencies();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

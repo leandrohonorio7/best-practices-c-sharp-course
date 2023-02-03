@@ -16,7 +16,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Configurations
             builder.Property(x => x.Plate)
                 .HasMaxLength(15);
 
-            builder.Property(x => x.Plate)
+            builder.Property(x => x.Color)
                 .HasMaxLength(50);
         }
     }
