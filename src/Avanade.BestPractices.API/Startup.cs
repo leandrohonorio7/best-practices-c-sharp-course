@@ -26,6 +26,7 @@ namespace Avanade.BestPractices.API
             var mapperConfig = new MapperConfiguration(x =>
             {
                 x.AddProfile<AccountProfile>();
+                x.AddProfile<ChargeProfile>();
             });
             var mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
@@ -34,6 +35,7 @@ namespace Avanade.BestPractices.API
             services.AddIdentityUserLogged();
             services.AddRepositoryDependencies();
             services.AddServiceDependencies();
+            services.AddInfrastructureDependencies();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

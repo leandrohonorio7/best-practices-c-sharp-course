@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.BestPractices.Tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.BestPractices.Infrestructure.Data", "src\Avanade.BestPractices.Infrestructure.Data\Avanade.BestPractices.Infrestructure.Data.csproj", "{3EEE2228-45E2-4451-98A3-027C8ED65550}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago", "src\Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago\Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago.csproj", "{E626E3BA-BCAA-4ED0-A2FA-AC1D7927D4FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{3EEE2228-45E2-4451-98A3-027C8ED65550}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EEE2228-45E2-4451-98A3-027C8ED65550}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EEE2228-45E2-4451-98A3-027C8ED65550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E626E3BA-BCAA-4ED0-A2FA-AC1D7927D4FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E626E3BA-BCAA-4ED0-A2FA-AC1D7927D4FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E626E3BA-BCAA-4ED0-A2FA-AC1D7927D4FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E626E3BA-BCAA-4ED0-A2FA-AC1D7927D4FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{EFB2A4A1-9F1E-49E5-86E7-970172B5B787} = {D41A7DD0-B2D7-45DB-AAA6-45D8BBEA932A}
 		{E6464A51-8B48-4A19-84B9-8EE612AB3A77} = {9EB2FE38-7742-4252-84A8-C1320B40F813}
 		{3EEE2228-45E2-4451-98A3-027C8ED65550} = {57A9B28D-E066-46D7-B7C2-8E10066554FA}
+		{E626E3BA-BCAA-4ED0-A2FA-AC1D7927D4FA} = {5BBD7A52-1315-4171-A0F0-152DBD1537C4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BC978A5-A591-4DF4-A987-A7DD11D72557}
