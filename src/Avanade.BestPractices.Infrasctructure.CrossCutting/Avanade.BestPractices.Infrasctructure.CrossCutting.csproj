@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Avanade.BestPractices.Domain\Avanade.BestPractices.Domain.csproj" />
     <ProjectReference Include="..\Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago\Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago.csproj" />
+    <ProjectReference Include="..\Avanade.BestPractices.Infrasctructure.CrossCutting.PayPal\Avanade.BestPractices.Infrasctructure.CrossCutting.PayPal.csproj" />
     <ProjectReference Include="..\Avanade.BestPractices.Infrestructure.Data\Avanade.BestPractices.Infrestructure.Data.csproj" />
     <ProjectReference Include="..\Avanade.BestPractices.Service\Avanade.BestPractices.Service.csproj" />
   </ItemGroup>

@@ -1,4 +1,5 @@
-﻿using Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago.Models;
+﻿using AutoMapper;
+using Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago.Models;
 using Avanade.BestPractices.Infrestructure.Core.Extensions;
 using Avanade.BestPractices.Infrestructure.Core.Payments;
 using Avanade.BestPractices.Infrestructure.Core.Payments.Models;
@@ -11,10 +12,13 @@ namespace Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago
     public class PaymentProvider : IPaymentProvider
     {
         private readonly MercadoPago _mercadoPago;
+        private readonly IMapper _mapper;
 
-        public PaymentProvider(MercadoPago mercadoPago)
+        public PaymentProvider(MercadoPago mercadoPago,
+            IMapper mapper)
         {
             _mercadoPago = mercadoPago;
+            _mapper = mapper;
         }
 
         public async Task<GenerateCreditCardTokenResponse> GenerateCreditCardTokenAsync(GenerateCreditCardTokenRequest request)
@@ -30,7 +34,7 @@ namespace Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago
             return await Task.FromResult(new GenerateCreditCardTokenResponse
             {
                 Token = response,
-                Provider = "MercadoPago"
+                Provider = PaymentProviderName.MercadoPago
             });
         }
 
@@ -38,24 +42,10 @@ namespace Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago
         {
             if (payment.Data is CreditCard)
             {
-                var creditCard = payment.Data as CreditCard;
-                var response = await _mercadoPago.MakeCreditCardPaymentAsync(new Models.Payment
-                {
-                    Brand = creditCard.Brand,
-                    DueDate = creditCard.DueDate,
-                    Name = creditCard.Name,
-                    Number = creditCard.Number,
-                    VerificationCode = creditCard.VerificationCode,
-                    Total = payment.Value.ConvertToMoney()
-                });
-
-                return new PaymentResponse
-                {
-                    ConfirmDate = response.ConfirmDate,
-                    Hash = response.Hash,
-                    Provider = "MercadoPago",
-                    Status = GetPaymentStatus(response.Status)
-                };
+                var mercadoPagoPaymentRequest = _mapper.Map<PaymentRequest<CreditCard>, Payment>(payment as PaymentRequest<CreditCard>);
+                var mercadoPagoPaymentResponse = await _mercadoPago.MakeCreditCardPaymentAsync(mercadoPagoPaymentRequest);
+                var paymentResponse = _mapper.Map<MercadoPagoPaymentResponse, PaymentResponse>(mercadoPagoPaymentResponse);
+                return paymentResponse;
             }
 
             //Bank Slip
@@ -63,16 +53,6 @@ namespace Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago
             //Debit card
 
             return default;
-        }
-
-        private PaymentStatus GetPaymentStatus(string status)
-        {
-            return status switch
-            {
-                MercadoPagoStatus.Approved => PaymentStatus.Approved,
-                MercadoPagoStatus.Declined => PaymentStatus.Denied,
-                _ => PaymentStatus.Unknown,
-            };
         }
     }
 }

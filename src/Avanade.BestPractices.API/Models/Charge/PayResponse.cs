@@ -1,6 +1,6 @@
 ﻿namespace Avanade.BestPractices.API.Models.Charge
 {
-    public class PaymentModel
+    public class PayResponse
     {
         public string Hash { get; set; }
         public string Provider { get; set; }

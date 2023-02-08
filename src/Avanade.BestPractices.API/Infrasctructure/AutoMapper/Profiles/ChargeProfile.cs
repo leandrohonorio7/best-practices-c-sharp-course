@@ -10,7 +10,8 @@ namespace Avanade.BestPractices.API.Infrasctructure.AutoMapper.Profiles
         public ChargeProfile()
         {
             CreateMap<CreditCardModel, CreditCard>();
-            CreateMap<PaymentResponse, PaymentModel>();
+            
+            CreateMap<PaymentResponse, PayResponse>();
         }
     }
 }
