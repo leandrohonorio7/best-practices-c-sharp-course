@@ -21,7 +21,6 @@ namespace Avanade.BestPractices.Service.Validators
 
             RuleFor(x => x.Documents)
                 .NotNull();
-
         }
     }
 }

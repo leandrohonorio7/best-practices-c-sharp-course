@@ -5,6 +5,6 @@ namespace Avanade.BestPractices.Domain.Interfaces.Repositories
 {
     public interface IVehicleRepository : IRepository<Vehicle>
     {
-
+        
     }
 }

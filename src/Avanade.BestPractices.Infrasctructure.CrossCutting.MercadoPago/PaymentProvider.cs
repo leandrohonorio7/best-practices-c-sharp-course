@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Avanade.BestPractices.Infrasctructure.CrossCutting.MercadoPago.Models;
-using Avanade.BestPractices.Infrestructure.Core.Extensions;
 using Avanade.BestPractices.Infrestructure.Core.Payments;
 using Avanade.BestPractices.Infrestructure.Core.Payments.Models;
 using Avanade.BestPractices.Infrestructure.Core.Payments.Requests;
