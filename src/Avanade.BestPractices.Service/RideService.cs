@@ -1,11 +1,14 @@
 ﻿using Avanade.BestPractices.Domain.Entities;
+using Avanade.BestPractices.Domain.Entities.Enums;
 using Avanade.BestPractices.Domain.Entities.Exceptions;
 using Avanade.BestPractices.Domain.Interfaces.Repositories;
 using Avanade.BestPractices.Domain.Interfaces.Services;
+using Avanade.BestPractices.Domain.ValueObjects;
 using Avanade.BestPractices.Service.Core;
 using Avanade.BestPractices.Service.Validators;
 using FluentValidation;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Avanade.BestPractices.Service
@@ -35,6 +38,22 @@ namespace Avanade.BestPractices.Service
                 throw new InvalidOperationException(RideErrorCode.R003.Code);
 
             ride.EndAt = DateTime.UtcNow;
+            ride.Distance = DateTime.UtcNow.Millisecond; //Mock
+
+            var charge = new Charge
+            {
+                GrossValue = new Money
+                {
+                    Currency = "BRL",
+                    Value = 10 * DateTime.UtcNow.Millisecond //Mock
+                },
+                Description = "Valor da corrida"
+            };
+            charge.CalculateNetValue();
+            ride.Charges = new List<Charge> 
+            {
+                charge 
+            };
 
             var validator = new RideValidator();
             await validator.ValidateAndThrowAsync(ride);

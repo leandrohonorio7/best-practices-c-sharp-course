@@ -18,7 +18,7 @@ namespace Avanade.BestPractices.Infrestructure.Data.Repositories
         public Task<Ride> GetCurrentAsync(Guid accountId)
         {
             return _db.Rides
-                .FirstOrDefaultAsync(x => x.Equals(accountId) &&
+                .FirstOrDefaultAsync(x => x.AccountId.Equals(accountId) &&
                                           !x.EndAt.HasValue);
         }
     }

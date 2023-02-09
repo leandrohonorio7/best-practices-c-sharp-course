@@ -24,6 +24,7 @@ namespace Avanade.BestPractices.API.Infrasctructure.AutoMapper
         {
             mc.AddProfile<AccountProfile>();
             mc.AddProfile<ChargeProfile>();
+            mc.AddProfile<RideProfile>();
 
             return services;
         }

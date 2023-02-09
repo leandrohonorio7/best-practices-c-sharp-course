@@ -2,6 +2,7 @@
 using Avanade.BestPractices.API.Models.Account;
 using Avanade.BestPractices.Domain.Entities;
 using Avanade.BestPractices.Domain.Interfaces.Services;
+using Avanade.BestPractices.Infrestructure.Core.Entities.Exceptions;
 using Avanade.BestPractices.Infrestructure.Core.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +28,7 @@ namespace Avanade.BestPractices.API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(ErrorCodeResponse),StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Create([FromBody] AccountModel model)
         {
             if (!ModelState.IsValid)
@@ -43,7 +44,7 @@ namespace Avanade.BestPractices.API.Controllers
         [ProducesResponseType(typeof(AccountModel), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(ErrorCodeResponse), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get([FromRoute] Guid id)
         {
             if (id.IsEmpty())

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Avanade.BestPractices.API.Models.Charge;
+using Avanade.BestPractices.Infrestructure.Core.Entities.Exceptions;
 using Avanade.BestPractices.Infrestructure.Core.Payments;
 using Avanade.BestPractices.Infrestructure.Core.Payments.Models;
 using Avanade.BestPractices.Infrestructure.Core.Payments.Requests;
@@ -31,7 +32,7 @@ namespace Avanade.BestPractices.API.Controllers
         [HttpPost("pay")]
         [ProducesResponseType(typeof(PayResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(ErrorCodeResponse), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Pay([FromBody] PayRequest request)
         {
             if (!ModelState.IsValid)

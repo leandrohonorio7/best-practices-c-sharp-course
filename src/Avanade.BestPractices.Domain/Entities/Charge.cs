@@ -13,7 +13,15 @@ namespace Avanade.BestPractices.Domain.Entities
         public Money GrossValue { get; set; }
         public Money DiscountValue { get; set; }
         public Money NetValue { get; set; }
-        public ChargeStatus Status { get; set; }
+        public ChargeStatus Status { get; set; } = ChargeStatus.Created;
         public string Description { get; set; }
+
+        public void CalculateNetValue()
+        {
+            if (DiscountValue == null)
+                DiscountValue = new Money();
+
+            NetValue = GrossValue - DiscountValue;
+        }
     }
 }
